@@ -157,6 +157,63 @@ view: tickets {
     sql: ${TABLE}.ticket_type ;;
   }
 
+  dimension: ticket_category {
+    sql: CASE
+            WHEN ${TABLE}.ticket_type LIKE 'address%' THEN 'address_shipping'
+            WHEN ${TABLE}.ticket_type LIKE 'agent_save%' THEN 'agent_save'
+            WHEN ${TABLE}.ticket_type LIKE 'auto_renew%' THEN 'cancel'
+            WHEN ${TABLE}.ticket_type LIKE 'billing%' THEN 'sub_question'
+            WHEN ${TABLE}.ticket_type LIKE 'brand_switch%' THEN 'sub_switch'
+            WHEN ${TABLE}.ticket_type LIKE 'cancel%' THEN 'cancel'
+            WHEN ${TABLE}.ticket_type LIKE 'crate%' THEN 'sub_question'
+            WHEN ${TABLE}.ticket_type LIKE 'damaged%' THEN 'crate_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'deluxe%' THEN 'sub_switch'
+            WHEN ${TABLE}.ticket_type LIKE 'donation%' THEN 'misc'
+            WHEN ${TABLE}.ticket_type LIKE 'duplicate%' THEN 'crate_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'every%' THEN 'sub_switch'
+            WHEN ${TABLE}.ticket_type LIKE 'first%' THEN 'address_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'fraud%' THEN 'misc'
+            WHEN ${TABLE}.ticket_type LIKE 'ghost%' THEN 'sub_question'
+            WHEN ${TABLE}.ticket_type LIKE 'gift%' THEN 'sub_question'
+            WHEN ${TABLE}.ticket_type LIKE 'graduate%' THEN 'sub_switch'
+            WHEN ${TABLE}.ticket_type LIKE 'group%' THEN 'sub_question'
+            WHEN ${TABLE}.ticket_type LIKE 'intl%' THEN 'international'
+            WHEN ${TABLE}.ticket_type LIKE 'marketing%' THEN 'misc'
+            WHEN ${TABLE}.ticket_type LIKE 'materials%' THEN 'crate_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'missing%' THEN 'crate_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'my_%' THEN 'sub_question'
+            WHEN ${TABLE}.ticket_type LIKE 'needs%' THEN 'new_order'
+            WHEN ${TABLE}.ticket_type LIKE 'new%' THEN 'new_order'
+            WHEN ${TABLE}.ticket_type LIKE 'negative%' THEN 'crate_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'olark%' THEN 'chat'
+            WHEN ${TABLE}.ticket_type LIKE 'order_error%' THEN 'crate_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'other%' THEN 'misc'
+            WHEN ${TABLE}.ticket_type LIKE 'packing%' THEN 'crate_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'phone%' THEN 'chat'
+            WHEN ${TABLE}.ticket_type LIKE 'pause%' THEN 'sub_switch'
+            WHEN ${TABLE}.ticket_type LIKE 'refer%' THEN 'sub_question'
+            WHEN ${TABLE}.ticket_type LIKE 'renew%' THEN 'sub_switch'
+            WHEN ${TABLE}.ticket_type LIKE 'replacement%' THEN 'crate_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'return%' THEN 'crate_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'schools%' THEN 'schools'
+            WHEN ${TABLE}.ticket_type LIKE 'shipping%' THEN 'address_shipping'
+             WHEN ${TABLE}.ticket_type LIKE 'shop%' THEN 'new_order'
+            WHEN ${TABLE}.ticket_type LIKE 'paypal%' THEN 'new_order'
+            WHEN ${TABLE}.ticket_type LIKE 'promo%' THEN 'new_order'
+            WHEN ${TABLE}.ticket_type LIKE 'purchase%' THEN 'new_order'
+            WHEN ${TABLE}.ticket_type LIKE 'refund%' THEN 'cancel'
+            WHEN ${TABLE}.ticket_type LIKE 'start%' THEN 'sub_question'
+            WHEN ${TABLE}.ticket_type LIKE 'subscription%' THEN 'sub_question'
+            WHEN ${TABLE}.ticket_type LIKE 'suspended%' THEN 'sub_question'
+            WHEN ${TABLE}.ticket_type LIKE 'survey%' THEN 'crate_issue'
+            WHEN ${TABLE}.ticket_type LIKE 'when%' THEN 'address_shipping'
+            WHEN ${TABLE}.ticket_type LIKE 'wismo%' THEN 'address_shipping'
+            WHEN ${TABLE}.ticket_type is null THEN 'not_tagged'
+            ELSE 'misc'
+            END ;;
+  }
+
+
   dimension: ticket_type_optional {
     type: string
     sql: ${TABLE}.ticket_type_optional ;;
