@@ -231,6 +231,12 @@ explore: tickets {
     sql_on: ${tickets.organization_id} = ${organizations.id} ;;
     relationship: many_to_one
   }
+
+  join: users {
+    type:  left_outer
+    sql_on:  CAST(${tickets.submitter_id} AS STRING) = ${users.id} ;;
+    relationship: one_to_one
+  }
 }
 
 explore: tickets_view {
