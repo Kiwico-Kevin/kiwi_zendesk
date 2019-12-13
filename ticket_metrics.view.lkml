@@ -290,10 +290,5 @@ view: ticket_metrics {
     drill_fields: [id, tickets.id]
   }
 
-  measure: first_resolution_time_in_minutes_calendar_value {
-    type: number
-    sql: ${TABLE}.first_resolution_time_in_minutes_calendar ;;
-  }
-
 
 }
