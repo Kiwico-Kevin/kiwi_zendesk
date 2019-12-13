@@ -19,6 +19,8 @@ view: satisfaction_ratings_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -38,6 +40,8 @@ view: satisfaction_ratings_view {
       raw,
       time,
       date,
+      week_of_year,
+      month_name,
       week,
       month,
       quarter,
@@ -53,6 +57,8 @@ view: satisfaction_ratings_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -70,6 +76,15 @@ view: satisfaction_ratings_view {
     sql: ${TABLE}.score ;;
   }
 
+  measure: score_value {
+    type: average
+    sql:
+    CASE
+    WHEN ${TABLE}.score LIKE '%good%' then 1
+    WHEN ${TABLE}.score LIKE '%bad%' then 0
+    ELSE NULL END;;
+  }
+
   dimension: ticket_id {
     type: string
     # hidden: yes
@@ -83,6 +98,8 @@ view: satisfaction_ratings_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -102,6 +119,8 @@ view: satisfaction_ratings_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
