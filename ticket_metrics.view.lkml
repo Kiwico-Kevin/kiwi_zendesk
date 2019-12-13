@@ -24,6 +24,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -43,6 +45,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -57,6 +61,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -96,6 +102,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -110,6 +118,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -124,6 +134,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -148,6 +160,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -182,6 +196,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -206,6 +222,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -220,6 +238,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -240,6 +260,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -254,6 +276,8 @@ view: ticket_metrics {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -265,4 +289,11 @@ view: ticket_metrics {
     type: count
     drill_fields: [id, tickets.id]
   }
+
+  measure: first_resolution_time_in_minutes_calendar_value {
+    type: number
+    sql: ${TABLE}.first_resolution_time_in_minutes_calendar ;;
+  }
+
+
 }
