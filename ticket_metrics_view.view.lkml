@@ -7,13 +7,13 @@ view: ticket_metrics_view {
     sql: ${TABLE}.id ;;
   }
 
-  dimension: agent_wait_time_in_minutes_business {
-    type: number
+  measure: agent_wait_time_in_minutes_business {
+    type: average
     sql: ${TABLE}.agent_wait_time_in_minutes_business ;;
   }
 
-  dimension: agent_wait_time_in_minutes_calendar {
-    type: number
+  measure: agent_wait_time_in_minutes_calendar {
+    type: average
     sql: ${TABLE}.agent_wait_time_in_minutes_calendar ;;
   }
 
@@ -24,6 +24,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -43,6 +45,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -57,6 +61,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -64,23 +70,23 @@ view: ticket_metrics_view {
     sql: ${TABLE}.created_at ;;
   }
 
-  dimension: first_resolution_time_in_minutes_business {
-    type: number
+  measure: first_resolution_time_in_minutes_business {
+    type: average
     sql: ${TABLE}.first_resolution_time_in_minutes_business ;;
   }
 
-  dimension: first_resolution_time_in_minutes_calendar {
-    type: number
+  measure: first_resolution_time_in_minutes_calendar {
+    type: average
     sql: ${TABLE}.first_resolution_time_in_minutes_calendar ;;
   }
 
-  dimension: full_resolution_time_in_minutes_business {
-    type: number
+  measure: full_resolution_time_in_minutes_business {
+    type: average
     sql: ${TABLE}.full_resolution_time_in_minutes_business ;;
   }
 
-  dimension: full_resolution_time_in_minutes_calendar {
-    type: number
+  measure: full_resolution_time_in_minutes_calendar {
+    type: average
     sql: ${TABLE}.full_resolution_time_in_minutes_calendar ;;
   }
 
@@ -96,6 +102,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -110,6 +118,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -124,6 +134,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -131,13 +143,13 @@ view: ticket_metrics_view {
     sql: ${TABLE}.loaded_at ;;
   }
 
-  dimension: on_hold_time_in_minutes_business {
-    type: number
+  measure: on_hold_time_in_minutes_business {
+    type: average
     sql: ${TABLE}.on_hold_time_in_minutes_business ;;
   }
 
-  dimension: on_hold_time_in_minutes_calendar {
-    type: number
+  measure: on_hold_time_in_minutes_calendar {
+    type: average
     sql: ${TABLE}.on_hold_time_in_minutes_calendar ;;
   }
 
@@ -148,6 +160,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -165,13 +179,13 @@ view: ticket_metrics_view {
     sql: ${TABLE}.replies ;;
   }
 
-  dimension: reply_time_in_minutes_business {
-    type: number
+  measure: reply_time_in_minutes_business {
+    type: average
     sql: ${TABLE}.reply_time_in_minutes_business ;;
   }
 
-  dimension: reply_time_in_minutes_calendar {
-    type: number
+  measure: reply_time_in_minutes_calendar {
+    type: average
     sql: ${TABLE}.reply_time_in_minutes_calendar ;;
   }
 
@@ -182,6 +196,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -189,13 +205,13 @@ view: ticket_metrics_view {
     sql: ${TABLE}.requester_updated_at ;;
   }
 
-  dimension: requester_wait_time_in_minutes_business {
-    type: number
+  measure: requester_wait_time_in_minutes_business {
+    type: average
     sql: ${TABLE}.requester_wait_time_in_minutes_business ;;
   }
 
-  dimension: requester_wait_time_in_minutes_calendar {
-    type: number
+  measure: requester_wait_time_in_minutes_calendar {
+    type: average
     sql: ${TABLE}.requester_wait_time_in_minutes_calendar ;;
   }
 
@@ -206,6 +222,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -220,6 +238,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -240,6 +260,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
@@ -254,6 +276,8 @@ view: ticket_metrics_view {
       time,
       date,
       week,
+      week_of_year,
+      month_name,
       month,
       quarter,
       year
