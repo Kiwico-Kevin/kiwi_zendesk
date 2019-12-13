@@ -83,6 +83,7 @@ view: satisfaction_ratings_view {
     WHEN ${TABLE}.score LIKE '%good%' then 1
     WHEN ${TABLE}.score LIKE '%bad%' then 0
     ELSE NULL END;;
+    value_format: "0.00"
   }
 
   dimension: ticket_id {

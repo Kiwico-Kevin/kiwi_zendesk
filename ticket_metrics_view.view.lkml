@@ -10,11 +10,13 @@ view: ticket_metrics_view {
   measure: agent_wait_time_in_minutes_business {
     type: average
     sql: ${TABLE}.agent_wait_time_in_minutes_business ;;
+    value_format: "0"
   }
 
   measure: agent_wait_time_in_minutes_calendar {
     type: average
     sql: ${TABLE}.agent_wait_time_in_minutes_calendar ;;
+    value_format: "0"
   }
 
   dimension_group: assigned {
@@ -73,21 +75,25 @@ view: ticket_metrics_view {
   measure: first_resolution_time_in_minutes_business {
     type: average
     sql: ${TABLE}.first_resolution_time_in_minutes_business ;;
+    value_format: "0"
   }
 
   measure: first_resolution_time_in_minutes_calendar {
     type: average
     sql: ${TABLE}.first_resolution_time_in_minutes_calendar ;;
+    value_format: "0"
   }
 
   measure: full_resolution_time_in_minutes_business {
     type: average
     sql: ${TABLE}.full_resolution_time_in_minutes_business ;;
+    value_format: "0"
   }
 
   measure: full_resolution_time_in_minutes_calendar {
     type: average
     sql: ${TABLE}.full_resolution_time_in_minutes_calendar ;;
+    value_format: "0"
   }
 
   dimension: group_stations {
@@ -146,11 +152,13 @@ view: ticket_metrics_view {
   measure: on_hold_time_in_minutes_business {
     type: average
     sql: ${TABLE}.on_hold_time_in_minutes_business ;;
+    value_format: "0"
   }
 
   measure: on_hold_time_in_minutes_calendar {
     type: average
     sql: ${TABLE}.on_hold_time_in_minutes_calendar ;;
+    value_format: "0"
   }
 
   dimension_group: received {
@@ -182,11 +190,13 @@ view: ticket_metrics_view {
   measure: reply_time_in_minutes_business {
     type: average
     sql: ${TABLE}.reply_time_in_minutes_business ;;
+    value_format: "0"
   }
 
   measure: reply_time_in_minutes_calendar {
     type: average
     sql: ${TABLE}.reply_time_in_minutes_calendar ;;
+    value_format: "0"
   }
 
   dimension_group: requester_updated {
@@ -208,11 +218,13 @@ view: ticket_metrics_view {
   measure: requester_wait_time_in_minutes_business {
     type: average
     sql: ${TABLE}.requester_wait_time_in_minutes_business ;;
+    value_format: "0"
   }
 
   measure: requester_wait_time_in_minutes_calendar {
     type: average
     sql: ${TABLE}.requester_wait_time_in_minutes_calendar ;;
+    value_format: "0"
   }
 
   dimension_group: solved {

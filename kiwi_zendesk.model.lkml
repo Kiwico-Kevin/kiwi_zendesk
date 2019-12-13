@@ -194,10 +194,10 @@ explore: ticket_metrics_view {
     relationship: many_to_one
   }
 
-  join: satisfaction_ratings {
+  join: satisfaction_ratings_view {
     type: left_outer
-    sql_on: ${tickets.satisfaction_rating_id} = ${satisfaction_ratings.id} ;;
-    relationship: many_to_one
+    sql_on: trim(${ticket_metrics_view.ticket_id}) = trim(${satisfaction_ratings_view.ticket_id}) ;;
+    relationship: many_to_many
   }
 
   join: groups {
